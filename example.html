@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NerveOS</title>
+		<link rel="stylesheet" href="css/gen.css"/>
+		<link id="alfaStyle" rel="stylesheet" href="css/allLight.css"/>
+		<link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+		<style>
+		.link:focus{outline:none;}
+		</style>
+	</head>
+
+
+	<body class="avenir">
+
+
+		<nav class="pa3 pa4-ns bb b--black-10 mb5">
+		  <a class="link dim black f3 v-mid dib mr3 pointer grow" title="home">NerveOS</a>
+		  <a class="link dim gray f6 f5-ns dib mr3 ba br4 pa2" href="#" title="devices">Handlers</a>
+		  <a class="link dim gray f6 f5-ns dib mr3 ba br4 pa2" href="#" title="consuming">Consumers</a>
+		  <!--<a class="link dim gray f6 f5-ns dib mr3 ba br4 pa2" href="#" title="config">Settings</a>-->
+		</nav>
+
+
+		<div id="home">
+
+				<h1 class="pl5 pb3 light-green f3 fw1 mt0 lh-title">System Summary</h1>
+
+				<div class="w-100 mw6-l ph5">
+  				<article class="ph3 br4 ba b--black-10 mb3 pt3 pb3">
+				    <a class="link dt w-100 pb2 mt2">
+
+				      <div class="dtc v-top pt2 pl2">
+				        
+				        <div class="f6 black-30 mv0">Total Balance</div>
+
+				        <dl class="mt2 f6">
+				          <dd class="ml0 black-70">25,6211 Mi</dd>
+				        </dl>
+				    		<div style="width:94%;height:0.5rem;" class="mt2 mb2 br3 bg-light-green"></div>
+
+
+				        <div class="f6 black-30 mv0 pt3">Weekly Spending</div>
+				        <dl class="mt2 f6">
+				          <dd id="sumSpending" class="ml0 black-70">2,3217 Mi</dd>
+				        </dl>
+				    		<div id="sumSpendingWidth" style="width:6%;height:0.5rem;" class="mt2 mb2 br3 bg-light-yellow animate-width"></div>
+
+			       		<dl class="mt2 f6 pt3">
+				        	<dt class="black-30">NerveOS 0.72 - Kernel 4.20.14</dt>
+				        </dl>
+
+				      </div>
+				    </a>
+				  </article>
+				</div>
+
+		</div>
+
+		<div id="devices" class="dn">
+
+				<h1 class="pl5 pb3 light-green f3 fw1 mt0 lh-title">Handling Devices</h1>
+
+
+
+				<main class="w-100 mw6-l ph5">
+
+
+				  <article class="hover br4 ba b--black-10 mb3 link dt w-100 pb2 mt2">
+				      <div class="pl3 pt1 pr3 dtc w3 v-mid">
+				       
+						<div class="f2 hov-hover-light-green">&#x1f697;</div>
+
+				      </div>
+				      <div class="dtc v-top pt4 pl2">
+
+				        <div class="dib pb2 f6 fw6 lh-title black-60 mv0">Telsa 3</div>
+				        <div class="fr mr4 pb2 f6 black-30 mv0">TS-3512</div>
+
+				        <dl class="mt2 f6">
+				        	<dt id="teslaState" class="black-30 light-green">Active Charging</dt>
+				          	<dd id="teslaStateTxt" class="ml0 black-50 f6">Charging Station E-Stockholm </dd>
+				        </dl>
+				      	
+				      	<!--<div class="w-100 mb3">
+				     		<div class="ml0 f6 black-30">Completion Progress</div>
+				    		<div style="width:83%;height:0.5rem;" class="mt2 mb2 bg-animate br3 ba b--gray"></div>
+				  		</div>-->
+
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Balance</dt>
+				          <dd class="ml0 black-70">14,3832 Ki</dd>
+				        </dl>
+				      	<div class="w-100">
+				    		<div style="width:60%;height:0.5rem;" class="mt2 mb2 bg-animate br3 bg-light-green"></div>
+				  		</div>
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Spent this week</dt>
+				          	<dd class="ml0 black-70">7.4646 Ki</dd>
+				        </dl>
+				      	<div class="w-100">
+				    		<div style="width:60%;height:0.5rem;" class="mt2 mb2 bg-animate br3 bg-light-yellow"></div>
+				  		</div>
+				  		<div class="mt3 mb3 f6">
+				  			<a onclick="handled.viewTeslaSpends()" class="dim pointer ml0 black-30">Spendings &#x2192;</a>
+				  		</div>
+
+				      </div>
+				  </article>
+
+
+
+
+
+				  <article id="teslaSpends" class="dn br4 ba b--black-10 mb4">
+				    <a class="link dt w-100 pb2 mt2">
+
+				      <div class="pl5 dtc v-top pt2 pl2">
+
+
+
+				        <dl class="pl3 mt2 f6">
+				        	<dt class="black-30">Energy stations</dt>
+				          	<dd class="ml0 black-70">5.8225 Ki</dd>
+				        </dl>
+
+				        <dl class="pl3 mt2 f6">
+				        	<dt class="black-30">In car wine refill</dt>
+				          <dd class="ml0 black-70">0.6290 Ki</dd>
+				        </dl>
+
+				        <dl class="pl3 mt2 f6">
+				        	<dt class="black-30">Roasted coffee beans</dt>
+				          <dd class="ml0 black-70">0.4164 Ki</dd>
+				        </dl>
+				        <dl class="pl3 mt2 f6">
+				        	<dt class="black-30">Parking meters</dt>
+				          <dd class="ml0 black-70">0.2634 Ki</dd>
+				        </dl>
+
+
+
+				      </div>
+
+				      
+				    </a>
+				  </article>
+
+
+
+				  <article class=" hover br4 ba b--black-10 mb3 link dt w-100 pb2 mt2">
+				      <div class="pl3 pt1 pr3 dtc w3 v-mid">
+				       
+						<div class="f2 hov-hover-light-green">&#127969;</div>
+
+				      </div>
+
+				      <div class="dtc v-top pt4 pl2">
+
+				        <div class="dib pb2 f6 fw6 lh-title black-60 mv0">Cisco Home Energy Collector</div>
+				        <div class="fr mr4 pb2 f6 black-30 mv0">CE-3G6</div>
+
+
+
+				        <dl class="mt2 f6">
+				        	<dt class="black-30 light-green">Active Collecting</dt>
+				          	<dd class="ml0 black-50 f6">Rate of 0,0351 Kw/hr</dd>
+				        </dl>
+
+
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Energy Collected</dt>
+				      		<dd class="ml0 black-70">16,1552 Kw</dd>
+				        </dl>
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Balance</dt>
+				          <dd class="ml0 black-70">52,3832 Ki</dd>
+				        </dl>
+				      	<div class="w-100">
+				    		<div style="width:84%;height:0.5rem;" class="mt2 mb2 bg-animate br3 bg-light-green"></div>
+				  		</div>
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Spent this week</dt>
+				          	<dd class="ml0 black-70">25.4646 Ki</dd>
+				        </dl>
+				      	<div class="w-100">
+				    		<div style="width:30%;height:0.5rem;" class="mt2 mb2 bg-animate br3 bg-light-yellow"></div>
+				  		</div>
+				  		<div class="mt3 mb3 f6">
+				  			<a onclick="handled.viewHomeSpends()" class="dim pointer ml0 black-30">Spendings &#x2192;</a>
+				  		</div>
+				      </div>
+
+				  </article>
+
+
+
+				  <article id="homeSpends" class="dn br4 ba b--black-10 mb4">
+				    <a class="link dt w-100 pb2 mt2	">
+
+				      <div class="pl5 dtc v-top pt2">
+
+
+				        <dl class="pl3 mt2 f6">
+				        	<dt class="black-30">Town Energy Infrastructure</dt>
+				          	<dd class="ml0 black-70">1.8225 Ki</dd>
+				        </dl>
+
+				        <dl class="pl3 mt2 f6">
+				        	<dt class="black-30">Tesla Permissioned Charging</dt>
+				          <dd class="ml0 black-70">14,3832 Ki</dd>
+				        </dl>
+
+				      </div>
+
+				      
+				    </a>
+				  </article>
+
+
+
+
+
+
+				</main>
+
+
+		</div>
+		
+		<div id="consuming" class="dn">
+
+				<h1 class="pl5 pb3 light-green f3 fw1 mt0 lh-title">Consuming Devices</h1>
+
+
+				<main class="w-100 mw6-l ph5">				
+
+				  <article class="hover br4 ba b--black-10 mb3 link dt w-100 pb2 mt2">
+				      <div class="pl3 pt1 pr3 dtc w3 v-mid">
+				       
+						<div class="f2 hov-hover-light-green">&#x2668;</div>
+
+				      </div>
+
+				      <div class="dtc v-top pt4 pl2">
+
+				        <div class="dib pb2 f6 fw6 lh-title black-60 mv0">Dyson Smart Heating/AC</div>
+				        
+				        <div class="fr mr4 pb2 f6 black-30 mv0">DV-2518</div>
+
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Energy Used</dt>
+				      		<dd class="ml0 black-70">4,1552 KW</dd>
+				        </dl>
+				      	
+				      	<div class="w-100">
+				    		<div style="width:14%;height:0.5rem;" class="mt2 mb2 bg-animate br3 bg-light-yellow"></div>
+				  		</div>
+				        
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Balance used</dt>
+				          <dd class="ml0 black-70">1,3832 Ki</dd>
+				        </dl>
+				      	
+				      	<div class="w-100">
+				    		<div style="width:3%;height:0.5rem;" class="mt2 mb2 bg-animate br3 bg-light-yellow"></div>
+				  		</div>
+
+				      </div>
+
+				  </article>
+
+
+				  <article class="hover br4 ba b--black-10 mb3 link dt w-100 pb2 mt2">
+				      <div class="pl3 pt1 pr3 dtc w3 v-mid">
+				       
+						<div class="f2 hov-hover-light-green">&#x1f32c;</div>
+
+				      </div>
+
+				      <div class="dtc v-top pt4 pl2">
+
+				        <div class="dib pb2 f6 fw6 lh-title black-60 mv0">Cisco Refrigerator E-3</div>
+				        
+				        <div class="fr mr4 pb2 f6 black-30 mv0">CR-918V</div>
+
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Energy Used</dt>
+				      		<dd class="ml0 black-70">4,1552 KW</dd>
+				        </dl>
+				      	
+				      	<div class="w-100">
+				    		<div style="width:14%;height:0.5rem;" class="mt2 mb2 bg-animate br3 bg-light-yellow"></div>
+				  		</div>
+				        
+				        <dl class="mt2 f6">
+				        	<dt class="black-30">Balance used</dt>
+				          <dd class="ml0 black-70">1,3832 Ki</dd>
+				        </dl>
+				      	
+				      	<div class="w-100">
+				    		<div style="width:3%;height:0.5rem;" class="mt2 mb2 bg-animate br3 bg-light-yellow"></div>
+				  		</div>
+
+				      </div>
+
+				  </article>
+
+
+
+			</main>
+
+		</div>
+
+		<div id="config">
+			
+		</div>
+
+		<div id="help">
+			
+		</div>
+
+
+
+		<script src="js/themes.js"></script>
+		<script src="js/time.js"></script>
+		<script src="js/tools.js"></script>
+		<script src="js/notifia.js"></script>
+	</body>
+
+<script>
+
+	var handled = new Handled();
+	handled.init();
+
+	function Handled(){
+		
+		var q = function(key){ return document.querySelector("#"+key); };
+		var qAll = function(key){ return document.querySelectorAll(key); };
+
+	    var NT = new NTools();
+
+
+	    this.viewHomeSpends = function(){
+	    	if (q("homeSpends").classList.contains("dn")){
+	    		q("homeSpends").classList.remove("dn");
+	    	} else {
+	    		q("homeSpends").classList.add("dn");
+	    	}
+	    };
+
+	    this.viewTeslaSpends = function(){
+	    	if (q("teslaSpends").classList.contains("dn")){
+	    		q("teslaSpends").classList.remove("dn");
+	    	} else {
+	    		q("teslaSpends").classList.add("dn");
+	    	}
+	    };
+
+	    this.init = function(){
+			var links = qAll("nav a");
+
+			console.log("All links");
+			console.log(links);
+			for (var x=0;x<links.length;x++){
+				console.log("Making watch event");
+		    	NT.watchEvents({id: links[x], e: ["click"], res: selectedNav});
+			}
+
+			throwDemo();
+		};
+
+		var selectedNav = function(evt){
+			console.log("Helloe");
+			console.log(evt);
+			console.log(evt.target.title);
+
+			handleViewSwitch(evt);
+
+		};
+
+		var handleViewSwitch = function(evt){
+			
+			var types = ["home","devices","consuming","config","help"];
+			
+			var allLinks = qAll("nav a");
+
+			console.log("turning off");
+
+			
+			for (var x=0;x<types.length;x++){
+
+				if (types[x] == evt.target.title){
+
+					console.log("Found!");
+					evt.target.classList.add("b--light-green");
+					q(types[x]).classList.remove("dn");
+					console.log(evt.target.classList);
+
+				} else {
+					console.log("Not found");
+
+					q(types[x]).classList.add("dn");
+
+				}
+
+			}
+
+
+
+
+				for (var y=0;y<allLinks.length;y++){
+					console.log("check nodes");
+					if (allLinks[y].title !==  evt.target.title){
+						console.log("Found the title of !" + evt.target.title);
+						allLinks[y].classList.remove("b--light-green");
+					} 
+				}
+
+	
+
+		};
+
+		var throwDemo = function(){
+
+			setTimeout(function(){
+				q("sumSpending").innerHTML = "8.1442 Mi";
+				q("sumSpendingWidth").style.width = "33%";
+
+		         var noticeBundle = {
+
+		                    id: "ciscoSpentTxt",
+		                    icon: '<span class="black-50">'+"&#x1f697;"+'</span>',
+		                    location: "bottom-1 right-1",
+		                    txtClass: "imcompTxt",
+		                    text: '<span class="black-50">'+"Cisco Home Energy Collector just spent 1.8225 Ki for Town Energy Infrastructure"+'</span>',
+		                    colour: "bg-light-green",
+		                    type: "helper",
+		                    fade: true,
+		                    skippable: false
+
+		                };
+
+			        NM.makeNotice(noticeBundle,function(){
+
+
+			        });
+
+
+
+			},1000);
+
+
+
+				setTimeout(function(){
+
+		         var noticeBundle = {
+
+		                    id: "teslaStatusTxt",
+		                    icon: '<span class="black-50">'+"&#x1f697;"+'</span>',
+		                    location: "bottom-1 right-1",
+		                    txtClass: "imcompTxt",
+		                    text: '<span class="black-50">'+"Telsa 3 just changed status to \"En-Route Pharmacy Pickup\""+'</span>',
+		                    colour: "bg-light-green",
+		                    type: "helper",
+		                    fade: true,
+		                    skippable: false
+
+		                };
+
+			        NM.makeNotice(noticeBundle,function(){
+
+			        	q("teslaState").innerHTML = "Active Operation";
+			        	q("teslaStateTxt").innerHTML = 'En-route "Pharmacy pickup"';
+
+			        });
+
+				},9000);
+
+		};
+
+
+	}
+
+</script>
+
+</html>
