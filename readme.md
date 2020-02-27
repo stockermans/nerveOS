@@ -2,6 +2,8 @@
 
 This is a concept dashboard for an idea of an operating system for smart devices.
 
+![](header.png)
+
 ## Getting Started
 
 Open example.html
